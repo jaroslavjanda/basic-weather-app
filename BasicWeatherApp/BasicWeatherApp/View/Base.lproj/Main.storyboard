@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,34 +11,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BasicWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="BasicWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-X2-o6i">
-                                <rect key="frame" x="24" y="246" width="366" height="414"/>
+                                <rect key="frame" x="24" y="204" width="327" height="414"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUNNY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uI-qG-Cxd" userLabel="weatherState">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honkong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk6-si-55B" userLabel="city">
-                                        <rect key="frame" x="0.0" y="60" width="366" height="24"/>
+                                        <rect key="frame" x="0.0" y="60" width="327" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unT-tb-qoV" userLabel="ContentImage">
-                                        <rect key="frame" x="0.0" y="108" width="366" height="160"/>
+                                        <rect key="frame" x="0.0" y="108" width="327" height="160"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-I1-xT1">
-                                                <rect key="frame" x="103" y="0.0" width="160" height="160"/>
+                                                <rect key="frame" x="83.666666666666686" y="0.0" width="160" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="G5r-sD-hD2"/>
                                                     <constraint firstAttribute="width" constant="160" id="uXu-X9-ZfW"/>
@@ -53,7 +53,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-Bu-hzm" userLabel="Temperature">
-                                        <rect key="frame" x="0.0" y="284" width="366" height="95.5"/>
+                                        <rect key="frame" x="0.0" y="284" width="327" height="95.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -86,6 +86,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="dk6-si-55B" id="HKb-SO-470"/>
+                        <outlet property="temperatureLabel" destination="uRt-Bu-hzm" id="RpJ-wj-ovr"/>
+                        <outlet property="weatherIcon" destination="f1r-I1-xT1" id="dd9-sm-0FS"/>
+                        <outlet property="weatherLabel" destination="9uI-qG-Cxd" id="oTw-Ha-GZN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
