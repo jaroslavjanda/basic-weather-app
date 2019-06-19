@@ -14,6 +14,7 @@
 		691E93CC22BA4FEC00D9832F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691E93CA22BA4FEC00D9832F /* LaunchScreen.storyboard */; };
 		691E93D822BA515100D9832F /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691E93D722BA515100D9832F /* WeatherDataModel.swift */; };
 		691E93DE22BA51B600D9832F /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691E93DD22BA51B600D9832F /* ChangeCityViewController.swift */; };
+		691E93E022BA617600D9832F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691E93DF22BA617600D9832F /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		691E93CD22BA4FEC00D9832F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		691E93D722BA515100D9832F /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		691E93DD22BA51B600D9832F /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
+		691E93DF22BA617600D9832F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				691E93C822BA4FEC00D9832F /* Assets.xcassets */,
+				691E93DF22BA617600D9832F /* UIColorExtension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				691E93C422BA4FE900D9832F /* WeatherViewController.swift in Sources */,
 				691E93C222BA4FE900D9832F /* AppDelegate.swift in Sources */,
+				691E93E022BA617600D9832F /* UIColorExtension.swift in Sources */,
 				691E93D822BA515100D9832F /* WeatherDataModel.swift in Sources */,
 				691E93DE22BA51B600D9832F /* ChangeCityViewController.swift in Sources */,
 			);
@@ -332,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaroslavjanda.BasicWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -350,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaroslavjanda.BasicWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
