@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="BasicWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-X2-o6i">
+                                <rect key="frame" x="24" y="204" width="327" height="414"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUNNY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uI-qG-Cxd" userLabel="weatherState">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honkong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk6-si-55B" userLabel="city">
+                                        <rect key="frame" x="0.0" y="60" width="327" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unT-tb-qoV" userLabel="ContentImage">
+                                        <rect key="frame" x="0.0" y="108" width="327" height="160"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-I1-xT1">
+                                                <rect key="frame" x="83.666666666666686" y="0.0" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="G5r-sD-hD2"/>
+                                                    <constraint firstAttribute="width" constant="160" id="uXu-X9-ZfW"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="f1r-I1-xT1" firstAttribute="centerX" secondItem="unT-tb-qoV" secondAttribute="centerX" id="8cH-Dh-5yZ"/>
+                                            <constraint firstItem="f1r-I1-xT1" firstAttribute="centerY" secondItem="unT-tb-qoV" secondAttribute="centerY" id="EtS-BD-pza"/>
+                                            <constraint firstAttribute="height" constant="160" id="b1E-NC-Z22"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-Bu-hzm" userLabel="Temperature">
+                                        <rect key="frame" x="0.0" y="284" width="327" height="95.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="unT-tb-qoV" firstAttribute="top" secondItem="dk6-si-55B" secondAttribute="bottom" constant="24" id="2J3-Hl-Knn"/>
+                                    <constraint firstItem="uRt-Bu-hzm" firstAttribute="leading" secondItem="JUS-X2-o6i" secondAttribute="leading" id="2TF-jV-uiT"/>
+                                    <constraint firstAttribute="trailing" secondItem="dk6-si-55B" secondAttribute="trailing" id="4UM-xQ-NNY"/>
+                                    <constraint firstAttribute="height" constant="414" id="BAc-6f-F5R"/>
+                                    <constraint firstAttribute="trailing" secondItem="uRt-Bu-hzm" secondAttribute="trailing" id="ISM-y7-qVQ"/>
+                                    <constraint firstItem="9uI-qG-Cxd" firstAttribute="top" secondItem="JUS-X2-o6i" secondAttribute="top" id="Mcv-hQ-FgY"/>
+                                    <constraint firstItem="unT-tb-qoV" firstAttribute="leading" secondItem="JUS-X2-o6i" secondAttribute="leading" id="SdX-Bd-6bL"/>
+                                    <constraint firstAttribute="trailing" secondItem="9uI-qG-Cxd" secondAttribute="trailing" id="Y2L-TB-NgG"/>
+                                    <constraint firstAttribute="trailing" secondItem="unT-tb-qoV" secondAttribute="trailing" id="amA-Ck-pJb"/>
+                                    <constraint firstItem="dk6-si-55B" firstAttribute="top" secondItem="9uI-qG-Cxd" secondAttribute="bottom" id="dQO-kG-wwS"/>
+                                    <constraint firstItem="uRt-Bu-hzm" firstAttribute="top" secondItem="unT-tb-qoV" secondAttribute="bottom" constant="16" id="i9Z-Ee-fOH"/>
+                                    <constraint firstItem="9uI-qG-Cxd" firstAttribute="leading" secondItem="JUS-X2-o6i" secondAttribute="leading" id="oIr-l4-1lz"/>
+                                    <constraint firstItem="dk6-si-55B" firstAttribute="leading" secondItem="JUS-X2-o6i" secondAttribute="leading" id="oZG-cM-liv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="blueBackground"/>
+                        <constraints>
+                            <constraint firstItem="JUS-X2-o6i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="9ZJ-4Z-Y5g"/>
+                            <constraint firstItem="JUS-X2-o6i" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BBM-fo-ebf"/>
+                            <constraint firstItem="JUS-X2-o6i" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MKO-f2-hYx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JUS-X2-o6i" secondAttribute="trailing" constant="24" id="UrB-Ra-GF1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="dk6-si-55B" id="HKb-SO-470"/>
+                        <outlet property="temperatureLabel" destination="uRt-Bu-hzm" id="RpJ-wj-ovr"/>
+                        <outlet property="weatherIcon" destination="f1r-I1-xT1" id="dd9-sm-0FS"/>
+                        <outlet property="weatherLabel" destination="9uI-qG-Cxd" id="oTw-Ha-GZN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sunny" width="70" height="66"/>
+        <namedColor name="blueBackground">
+            <color red="0.12549019607843137" green="0.47058823529411764" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
