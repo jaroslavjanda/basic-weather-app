@@ -21,7 +21,7 @@ class WeatherViewController: UIViewController {
     
     // MARK: - Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "639321efa312f94d442150666ebd773e"
+    let APP_ID = "b3ec72ce3b4cd5378dea6c8b27272bfa"
     let UNITS = "metric"
     
     var locationManager = CLLocationManager()
@@ -49,13 +49,43 @@ class WeatherViewController: UIViewController {
             locationManager.stopUpdatingLocation()
         }
         
-        let params: [String: String] = ["id": APP_ID, "units": UNITS, "lat": String(locValue.latitude), "lac": String(locValue.longitude)]
+        let params: [String: String] = ["appid": APP_ID, "units": UNITS, "lat": String(locValue.latitude), "lon": String(locValue.longitude)]
         getWeatherData(URL: WEATHER_URL, params: params)
     }
 }
 
 private extension WeatherViewController {
+    
     func getWeatherData(URL: String, params: [String: String]) {
-        
+        Alamofire.request(URL, method: .get, parameters: params).responseJSON {
+            response in
+            print(response.result.debugDescription)
+            if response.result.isSuccess {
+                
+                guard let data = response.data else {
+                    print("Error: No data to decode")
+                    return
+                }
+                
+                guard let weather = try? JSONDecoder().decode(Weather.self, from: data ) else {
+                    print("Error: Couldn't decode data into Weather")
+                    return
+                }
+                self.updateUI(weather: weather)
+            }
+            else {
+                print("Error in reponse")
+            }
+        }
+    }
+    
+    func updateUI(weather: Weather) {
+        print(weather)
+        cityLabel.text = weather.name
+        weatherLabel.text = weather.weather[0].main
+        temperatureLabel.text = "\(String(Int(weather.main.temp.rounded())))°C"
+        weatherIcon.image = UIImage(named: weather.updateWeatherIcon(condition: weather.weather[0].id))
     }
 }
+
+
