@@ -1,13 +1,12 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
 
-abstract_target 'defaults' do
+target 'BasicWeatherApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  
+
+  # Pods for BasicWeatherApp
+
   pod 'Alamofire'
-
-  # Pods for App
-
-  target 'BasicWeatherApp'
 
 end
