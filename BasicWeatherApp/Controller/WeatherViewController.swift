@@ -26,21 +26,52 @@ class WeatherViewController: UIViewController {
     
     var locationManager = CLLocationManager()
     
+    var cityNameByUser: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //weatherIcon.loadGif(name: "loading")
         
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+            
+            let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+            if status == CLAuthorizationStatus.notDetermined
+            {
+                locationManager.requestAlwaysAuthorization()
+            }
+            else {
+                
+                print("locationServices disenabled")
+            }
             locationManager.startUpdatingLocation()
-        }
+        
+        
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        upSwipe.direction = .up
+        downSwipe.direction = .down
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        view.addGestureRecognizer(downSwipe)
+        view.addGestureRecognizer(upSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer)
+    {
+        performSegue(withIdentifier: "showChangeCity", sender: self)
     }
 }
 
- extension WeatherViewController: CLLocationManagerDelegate {
+extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         
@@ -88,4 +119,20 @@ private extension WeatherViewController {
     }
 }
 
-
+extension WeatherViewController: ChangeCityDelegate {
+    func userEnteredNewCity(city: String) {
+        cityNameByUser = city
+        let params: [String: String] = ["appid": APP_ID, "units": UNITS, "q": city]
+        getWeatherData(URL: WEATHER_URL, params: params)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChangeCity"{
+            let destinationVC = segue.destination as! ChangeCityViewController
+            
+            destinationVC.delegate = self
+            
+        }
+        
+    }
+}
