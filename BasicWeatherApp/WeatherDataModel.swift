@@ -19,22 +19,22 @@ struct Weather: Decodable {
         switch (condition) {
             
         case 0...300 :
-            return "tstorm1"
+            return "thunderstorm"
             
         case 301...500 :
             return "light_rain"
             
         case 501...600 :
-            return "shower3"
+            return "shower"
             
         case 601...700 :
-            return "snow4"
+            return "snow"
             
         case 701...771 :
             return "fog"
             
         case 772...799 :
-            return "tstorm3"
+            return "thunderstorm"
             
         case 800 :
             return "sunny"
@@ -43,10 +43,10 @@ struct Weather: Decodable {
             return "cloudy"
             
         case 900...903, 905...1000  :
-            return "tstorm3"
+            return "thunderstorm"
             
         case 903 :
-            return "snow5"
+            return "snow"
             
         case 904 :
             return "sunny"
